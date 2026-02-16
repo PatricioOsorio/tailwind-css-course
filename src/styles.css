@@ -35,6 +35,8 @@
   }
 
   .p-table-row {
+    @apply flex flex-col items-center justify-center md:table-row;
     @apply odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900/50 dark:even:bg-gray-950;
+    @apply w-full;
   }
 }
