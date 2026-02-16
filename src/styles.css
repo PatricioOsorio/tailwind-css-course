@@ -2,7 +2,7 @@
 
 @layer base {
   a {
-    @apply text-blue-500 underline hover:text-blue-400 cursor-pointer;
+    @apply cursor-pointer text-blue-500 underline hover:text-blue-400;
   }
 
   html {
@@ -32,5 +32,9 @@
 @layer components {
   .page {
     @apply flex flex-col gap-3 p-4;
+  }
+
+  .p-table-row {
+    @apply odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900/50 dark:even:bg-gray-950;
   }
 }
