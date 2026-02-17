@@ -100,11 +100,12 @@
       // Docs: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
 
       const LS_THEME = "theme";
+      const storedTheme = localStorage.getItem(LS_THEME);
 
       const applyTheme = () => {
         const isDark =
-          localStorage.getItem(LS_THEME) === "dark" ||
-          (!("theme" in localStorage) &&
+          storedTheme === "dark" ||
+          (!storedTheme &&
             window.matchMedia("(prefers-color-scheme: dark)").matches);
 
         document.documentElement.classList.toggle("dark", isDark);
