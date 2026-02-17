@@ -32,7 +32,7 @@
     @apply rounded-md border border-gray-600 bg-transparent px-4 py-3 text-white transition-colors outline-none;
     @apply placeholder:text-sm placeholder:italic;
     @apply disabled:cursor-not-allowed disabled:bg-gray-300/10 disabled:text-gray-500;
-    @apply invalid:border-red-500 invalid:bg-red-50 invalid:text-red-500;
+    @apply invalid:border-red-500 invalid:text-red-500 focus:border-sky-500 focus:invalid:border-red-500;
   }
 }
 
