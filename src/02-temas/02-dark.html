@@ -80,8 +80,8 @@
 
     <h1 class="my-5 text-xl font-bold">
       Actualmente:
-      <span>Tema Light</span>
-      <span>Tema Dark</span>
+      <span class="inline dark:hidden">Tema Light</span>
+      <span class="hidden dark:inline">Tema Dark</span>
     </h1>
 
     <button
@@ -98,6 +98,36 @@
     <script>
       // Todo: Agregar botón para cambiar tema aquí:
       // Docs: https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
+
+      const LS_THEME = "theme";
+
+      const applyTheme = () => {
+        const isDark =
+          localStorage.getItem(LS_THEME) === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+        document.documentElement.classList.toggle("dark", isDark);
+      };
+
+      const App = () => {
+        applyTheme();
+
+        const $button = document.querySelector("#theme-toggle");
+        const $html = document.documentElement;
+
+        $button.addEventListener("click", () => {
+          $html.classList.toggle("dark");
+
+          const isDarkCurrent = $html.classList.contains("dark");
+          const currentTheme = isDarkCurrent ? "dark" : "light";
+          localStorage.setItem(LS_THEME, currentTheme);
+        });
+      };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        App();
+      });
     </script>
   </body>
 </html>
