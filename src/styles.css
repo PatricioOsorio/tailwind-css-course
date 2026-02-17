@@ -2,7 +2,7 @@
 
 @layer base {
   a {
-    @apply cursor-pointer text-blue-500 underline hover:text-blue-400;
+    @apply cursor-pointer p-3 text-blue-500 underline hover:text-blue-400;
   }
 
   html {
